@@ -1,10 +1,11 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  padding-bottom: 4rem;
+  gap: 5rem;
+  padding-bottom: 5rem;
 }
 
+/* Hero Section */
 .hero {
   display: grid;
   grid-template-columns: 1fr;
@@ -68,6 +69,8 @@
 
 .actions {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 1rem;
   margin-top: 1rem;
 }
@@ -92,6 +95,47 @@
   transform: translateY(-2px);
 }
 
+.secondaryBtn {
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 1.125rem;
+  border-radius: 100px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.secondaryBtn:hover {
+  border-color: var(--brand-pink);
+  color: var(--brand-pink-dark);
+}
+
+.trustSignals {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  width: 100%;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.ratingText {
+  margin-left: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.ratingText:hover {
+  color: var(--brand-pink-dark);
+  text-decoration: underline;
+}
+
 .heroImage {
   position: relative;
   width: 100%;
@@ -112,6 +156,65 @@
   object-fit: cover;
 }
 
+/* Features */
+.features {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.featureItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(237, 165, 205, 0.15);
+  transition: var(--transition);
+}
+
+.featureItem:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
+  border-color: rgba(237, 165, 205, 0.4);
+}
+
+.featureIcon {
+  color: var(--brand-pink);
+  padding: 1rem;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featureItem h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.featureItem p {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Popular Section */
 .popular {
   max-width: 1200px;
   margin: 0 auto;
@@ -124,29 +227,198 @@
 
 .sectionHeader {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.sectionHeader h2 {
+@media (min-width: 600px) {
+  .sectionHeader {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.headerText h2 {
   font-size: 2rem;
   font-weight: 800;
   color: var(--text-primary);
   letter-spacing: -0.02em;
 }
 
+.headerText p {
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
 .linkBtn {
   font-weight: 600;
   color: var(--brand-pink-dark);
   transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .linkBtn:hover {
   color: var(--text-primary);
+  gap: 0.75rem;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
+}
+
+.mobileMenuBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+@media (min-width: 600px) {
+  .mobileMenuBtn {
+    display: none;
+  }
+}
+
+.fullMenuBtn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* About Teaser */
+.aboutTeaser {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .aboutTeaser {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.aboutImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.aboutContent h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.aboutContent p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.aboutList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.aboutList li::before {
+  content: "♥";
+  color: var(--brand-pink);
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.outlineBtn {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  border: 2px solid var(--brand-pink);
+  color: var(--brand-pink-dark);
+  font-weight: 700;
+  border-radius: 100px;
+  transition: var(--transition);
+}
+
+.outlineBtn:hover {
+  background-color: var(--brand-pink);
+  color: white;
+}
+
+/* Call To Action */
+.ctaSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.ctaCard {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(237, 165, 205, 0.2) 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  border: 1px solid rgba(237, 165, 205, 0.3);
+}
+
+.ctaCard h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.ctaCard p {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+}
+
+.primaryBtnLarge {
+  margin-top: 1rem;
+  padding: 1.25rem 3rem;
+  background-color: var(--text-primary);
+  color: white;
+  font-weight: 800;
+  font-size: 1.25rem;
+  border-radius: 100px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-md);
+}
+
+.primaryBtnLarge:hover {
+  background-color: var(--brand-pink);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(237, 165, 205, 0.3);
 }
