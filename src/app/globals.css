@@ -1,0 +1,50 @@
+:root {
+  --brand-pink: #EDA5CD;
+  --brand-pink-dark: #D98AB6;
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #FDF9FB;
+  --text-primary: #2C2529;
+  --text-secondary: #756D72;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 4px 12px rgba(237, 165, 205, 0.15);
+  --shadow-md: 0 8px 24px rgba(237, 165, 205, 0.25);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-outfit), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
